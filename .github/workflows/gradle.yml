@@ -3,7 +3,7 @@ name: Deploy Development Server
 ## develop 브랜치에 push가 되면 실행됩니다
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 permissions:
   contents: read
