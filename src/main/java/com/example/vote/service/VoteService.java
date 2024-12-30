@@ -42,24 +42,6 @@ public class VoteService {
 
         return voteResponseDtos;
 
-
-//        List<Posts> all = postsRepository.findByTitle(title); // 1
-//
-//        List<PostsResponseDto> postsResponseDtoList = new ArrayList<>(); // 2
-//
-//        for(Posts posts : all){ // 3
-//            PostsResponseDto dto = PostsResponseDto.builder()
-//                    .id(posts.getId())
-//                    .title(posts.getTitle())
-//                    .author(posts.getAuthor())
-//                    .content(posts.getContent())
-//                    .build();
-//
-//            postsResponseDtoList.add(dto); // 4
-//        }
-//
-//        return postsResponseDtoList;
-
     }
 
     public List<VoteResponseDto> vote(CustomUserDetails userDetails, Long id){
