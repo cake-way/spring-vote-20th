@@ -8,5 +8,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface VoteRepository extends JpaRepository<Vote, Long>  {
-    List<Vote> findByPart(Member.Part part);
+    //List<Vote> findByPart(Member.Part part);
 }

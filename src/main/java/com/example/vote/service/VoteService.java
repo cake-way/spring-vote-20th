@@ -25,14 +25,14 @@ public class VoteService {
     private final VoteRepository voteRepository;
 
     public List<VoteResponseDto> getResult(Member.Part part) {
-        List<Vote> votes = voteRepository.findByPart(part);
+        List<Candidate> candidates = candidateRepository.findByPart(part);
 
         List<VoteResponseDto> voteResponseDtos = new ArrayList<VoteResponseDto>();
 
-        for (Vote vote : votes) {
+        for (Candidate candidate : candidates) {
             VoteResponseDto voteResponseDto = VoteResponseDto.builder()
-                    .voteCount(vote.getCandidate().getVoteCount())
-                    .candidateName(vote.getCandidate().getName())
+                    .voteCount(candidate.getVoteCount())
+                    .candidateName(candidate.getName())
                     .build();
 
             voteResponseDtos.add(voteResponseDto);

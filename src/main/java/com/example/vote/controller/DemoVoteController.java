@@ -29,9 +29,9 @@ public class DemoVoteController {
     }
 
     // 결과 조회
-    @GetMapping("/{team}")
-    public ResponseEntity getResult(@PathVariable Member.Team team) {
-        final List<DemoVoteResponseDto> resposneDto = demoVoteService.getResult(team);
+    @GetMapping("/")
+    public ResponseEntity getResult() {
+        final List<DemoVoteResponseDto> resposneDto = demoVoteService.getResult();
         return ResponseEntity.ok().body(resposneDto);
     }
 }

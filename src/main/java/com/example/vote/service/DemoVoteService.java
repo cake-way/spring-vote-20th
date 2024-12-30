@@ -23,15 +23,15 @@ public class DemoVoteService {
     private final MemberRepository memberRepository;
     private final DemoCandiRepository demoCandiRepository;
 
-    public List<DemoVoteResponseDto> getResult(Member.Team team) {
-        List<DemoVote> demoVotes = demoVoteRepository.findByTeam(team);
+    public List<DemoVoteResponseDto> getResult() {
+        List<DemoCandi> demoCandies = demoCandiRepository.findAll();
 
         List<DemoVoteResponseDto> demoVoteResponseDtos = new ArrayList<DemoVoteResponseDto>();
 
-        for (DemoVote vote : demoVotes) {
+        for (DemoCandi candi : demoCandies) {
             DemoVoteResponseDto voteResponseDto = DemoVoteResponseDto.builder()
-                    .voteCount(vote.getDemoCandi().getVoteCount())
-                    .team(vote.getDemoCandi().getTeam())
+                    .voteCount(candi.getVoteCount())
+                    .team(candi.getTeam())
                     .build();
 
             demoVoteResponseDtos.add(voteResponseDto);
@@ -65,6 +65,6 @@ public class DemoVoteService {
         candidate.increaseVoteCount();
         demoCandiRepository.save(candidate);
 
-        return getResult(member.getTeam());
+        return getResult();
     }
 }
