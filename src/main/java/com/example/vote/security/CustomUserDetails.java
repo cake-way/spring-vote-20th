@@ -1,6 +1,7 @@
 package com.example.vote.security;
 
 import com.example.vote.domain.Member;
+import jakarta.servlet.http.Part;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,6 +32,10 @@ public class CustomUserDetails implements UserDetails {
     public String getUsername() {
         return member.getUsername();
     }
+
+    public Member.Part getPart() { return member.getPart(); }
+
+    public Member.Team getTeam() { return member.getTeam(); }
 
     @Override
     public boolean isAccountNonExpired() {
