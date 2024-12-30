@@ -69,6 +69,10 @@ public class VoteService {
         final Candidate candidate = candidateRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("Candidate not found"));
 
+        if (userDetails.getPart() != candidate.getPart()) {
+            throw new IllegalArgumentException("Part not match");
+        }
+
         // 투표 저장
         final Vote vote = Vote.builder()
                 .member(member)
