@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // JWT 필터 추가
                 .formLogin(form -> form.disable())
                 .httpBasic(httpBasic -> httpBasic.disable())
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/auth/**")); // 특정 경로 CSRF 비활성화
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
