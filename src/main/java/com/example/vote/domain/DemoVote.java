@@ -18,10 +18,8 @@ public class DemoVote {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private DemoCandi demoCandi;
 }

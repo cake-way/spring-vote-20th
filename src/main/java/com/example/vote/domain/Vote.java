@@ -18,11 +18,9 @@ public class Vote {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
     private Candidate candidate;
 
 
