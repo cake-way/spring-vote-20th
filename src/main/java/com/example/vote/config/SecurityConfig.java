@@ -1,24 +1,36 @@
 package com.example.vote.config;
 
+import com.example.vote.security.JwtAuthenticationFilter;
+import com.example.vote.security.JwtTokenProvider;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig {
+
+    private final JwtTokenProvider jwtTokenProvider; // JwtTokenProvider 주입
+    private final UserDetailsService userDetailsService; // UserDetailsService 주입
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(jwtTokenProvider); // 필터 수동 생성
+
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll() // 인증 없이 접근 가능한 경로
-                        .anyRequest().authenticated() // 나머지 요청은 인증 필요
+                        .requestMatchers("/", "/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .formLogin(form -> form.disable()) // 기본 로그인 페이지 비활성화
-                .httpBasic(httpBasic -> httpBasic.disable()) // HTTP Basic 인증 비활성화
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/auth/**")); // 특정 경로에서만 CSRF 비활성화
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // JWT 필터 추가
+                .formLogin(form -> form.disable())
+                .httpBasic(httpBasic -> httpBasic.disable())
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/auth/**")); // 특정 경로 CSRF 비활성화
 
         return http.build();
     }
