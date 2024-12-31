@@ -19,7 +19,7 @@ import java.util.List;
 public class DemoCandiController {
     private final DemoCandiService demoCandiService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<DemoCandidateResponseDto>> getTeams() {
         final List<DemoCandidateResponseDto> responseDtos = demoCandiService.getTeams();
         return ResponseEntity.ok().body(responseDtos);

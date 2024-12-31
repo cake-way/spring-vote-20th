@@ -15,7 +15,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/Demoday")
+@RequestMapping("/demoday")
 public class DemoVoteController {
 
     private final DemoVoteService demoVoteService;
@@ -29,7 +29,7 @@ public class DemoVoteController {
     }
 
     // 결과 조회
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity getResult() {
         final List<DemoVoteResponseDto> resposneDto = demoVoteService.getResult();
         return ResponseEntity.ok().body(resposneDto);
