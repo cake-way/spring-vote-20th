@@ -56,7 +56,7 @@ jobs:
             
             ## docker-compose.yaml 파일을 생성합니다.
                     sudo touch docker-compose.yaml
-                    echo -e "${{ secrets.DOCKER_COMPOSE }}" | sudo tee docker-compose.yaml > /dev/null
+                    echo "${{ secrets.DOCKER_COMPOSE }}" | sudo tee docker-compose.yaml > /dev/null
                     cat .env
                     source .env
             
