@@ -36,8 +36,8 @@ jobs:
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker build -t ${{ secrets.DOCKER_USERNAME }}/my-web-image .
           docker push ${{ secrets.DOCKER_USERNAME }}/my-web-image
-          docker build -f dockerfile-nginx -t ${{ secrets.DOCKER_USERNAME }}/my-nginx-image .
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-nginx-image
+#          docker build -f dockerfile-nginx -t ${{ secrets.DOCKER_USERNAME }}/my-nginx-image .
+#          docker push ${{ secrets.DOCKER_USERNAME }}/my-nginx-image
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
@@ -58,11 +58,12 @@ jobs:
                     sudo touch docker-compose.yaml
                     echo -e "${{ secrets.DOCKER_COMPOSE }}" | sudo tee docker-compose.yaml > /dev/null
                     cat .env
+                    source .env
             
             ## docker-compose를 실행합니다.
                     sudo chmod 666 /var/run/docker.sock
                     sudo docker rm -f $(docker ps -qa)
                     sudo docker pull ${{ secrets.DOCKER_USERNAME }}/my-web-image
-                    sudo docker pull ${{ secrets.DOCKER_USERNAME }}/my-nginx-image
-                    docker-compose -f docker-compose.yaml --env-file ./.env up -d
+#                    sudo docker pull ${{ secrets.DOCKER_USERNAME }}/my-nginx-image
+                    docker-compose -f docker-compose.yaml --env-file .env up -d
                     docker image prune -f

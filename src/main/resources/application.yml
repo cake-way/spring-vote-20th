@@ -22,7 +22,7 @@ spring:
       allowed-methods: GET, POST, PUT, DELETE, OPTIONS
 
   jwt:
-    secret-key: "${JWT_SECRET_KEY}"
+    secret-key: ${JWT_SECRET_KEY}
     expiration-ms: 86400000 # 1일 (밀리초 단위)
 
 
