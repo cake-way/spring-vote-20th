@@ -3,8 +3,11 @@ package com.example.vote.service;
 import com.example.vote.domain.Member;
 import com.example.vote.dto.SignupRequestDTO;
 import com.example.vote.dto.SignupResponseDTO;
+import com.example.vote.dto.UserInfoDto;
 import com.example.vote.repository.MemberRepository;
+import com.example.vote.security.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -42,5 +45,15 @@ public class MemberService {
         return SignupResponseDTO.builder()
                 .message("Signup successful!")
                 .build();
+    }
+
+    public UserInfoDto getUserInfo(CustomUserDetails userDetails) {
+        UserInfoDto userInfoDto = UserInfoDto.builder()
+                .username(userDetails.getUsername())
+                .part(userDetails.getPart())
+                .team(userDetails.getTeam())
+                .build();
+
+        return userInfoDto;
     }
 }
