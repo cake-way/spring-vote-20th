@@ -38,7 +38,7 @@ public class VoteService {
             voteResponseDtos.add(voteResponseDto);
         }
 
-        voteResponseDtos = voteResponseDtos.stream().sorted(Comparator.comparing(VoteResponseDto::getVoteCount)).collect(Collectors.toList());
+        voteResponseDtos = voteResponseDtos.stream().sorted(Comparator.comparing(VoteResponseDto::getVoteCount).reversed()).collect(Collectors.toList());
 
         return voteResponseDtos;
 
