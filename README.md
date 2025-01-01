@@ -1,4 +1,5 @@
 # spring_vote_20th
+http://43.200.25.35:8080/swagger-ui/index.html
 ## ERD
 ![image](https://github.com/user-attachments/assets/50231b13-ebb9-462c-b70b-75c93e553f27)
 ![image](https://github.com/user-attachments/assets/8163a159-8fe8-414e-b9b0-dcda4a305250)
