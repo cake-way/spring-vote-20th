@@ -26,21 +26,22 @@
   ![image](https://github.com/user-attachments/assets/5e2fbc9c-9378-40d2-aaa0-1c416c68d908)
   다른 파트 사람을 투표할 경우 오류 발생..!
   ![image](https://github.com/user-attachments/assets/6763d21c-f059-4958-9798-881c547f96d0)
-  
+
+- 프론트 파트장 투표결과 조회
+  ![image](https://github.com/user-attachments/assets/1cfb13c3-1535-4aad-a5d6-cee8d412cc91)
+
+- 백 파트장 투표 결과 조회
+  ![image](https://github.com/user-attachments/assets/862bdcc1-559b-4e5b-99fb-e40f83e6a103)
+
 - 데모데이 후보팀 조회
-![image](https://github.com/user-attachments/assets/955ce575-f5ed-495f-b252-481fb6263bc3)
+  ![image](https://github.com/user-attachments/assets/955ce575-f5ed-495f-b252-481fb6263bc3)
 
 - 데모데이 투표 post
-![image](https://github.com/user-attachments/assets/6e7d7399-b55b-413c-8f8f-f99a360237bb)
+  ![image](https://github.com/user-attachments/assets/f9c6dfdf-4e40-48bd-b339-2e876c38c3dc)
+  현재 속해있는 팀을 뽑을 경우..!
+  ![image](https://github.com/user-attachments/assets/6e7d7399-b55b-413c-8f8f-f99a360237bb)
 
 - 데모데이 투표결과 조회
   ![image](https://github.com/user-attachments/assets/18bf6c1b-1655-4c4a-8ea6-0d48c9d71bc5)
-
-- 데모데이 프론트 투표결과 조회
-![image](https://github.com/user-attachments/assets/1cfb13c3-1535-4aad-a5d6-cee8d412cc91)
-
-
-- 데모데이 백 투표 결과 조회
-![image](https://github.com/user-attachments/assets/862bdcc1-559b-4e5b-99fb-e40f83e6a103)
 
 
