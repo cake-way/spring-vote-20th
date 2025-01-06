@@ -40,9 +40,7 @@ http://43.200.25.35:8080/swagger-ui/index.html
 - 데모데이 투표 post
   ![image](https://github.com/user-attachments/assets/f9c6dfdf-4e40-48bd-b339-2e876c38c3dc)
   현재 속해있는 팀을 뽑을 경우..!
-  ![image](https://github.com/user-attachments/assets/6e7d7399-b55b-413c-8f8f-f99a360237bb)
+   ![image](https://github.com/user-attachments/assets/58faf84e-63ca-49f6-bb7f-2ae5300031a9)
 
-- 데모데이 투표결과 조회
-  ![image](https://github.com/user-attachments/assets/18bf6c1b-1655-4c4a-8ea6-0d48c9d71bc5)
 
 
